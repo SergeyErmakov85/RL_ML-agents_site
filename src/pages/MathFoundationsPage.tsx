@@ -39,6 +39,45 @@ const MathFoundationsPage: React.FC = () => {
           </p>
         </ContentBlock>
 
+        {/* Calculus */}
+        <SectionHeading 
+          title="Calculus" 
+          subtitle="The fundamental mathematical framework for understanding change and optimization."
+        />
+
+        <ContentBlock>
+          <a href="/calculus.pdf" target="_blank" className="block p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8">
+            <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
+            <p className="text-gray-700">
+              Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
+              This document covers derivatives, integrals, and their role in optimization algorithms.
+            </p>
+          </a>
+
+          <h3 className="text-xl font-semibold mb-4">Key Concepts in Calculus</h3>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
+            <li><strong>Integrals:</strong> Accumulating continuous quantities over time or space</li>
+            <li><strong>Multivariate Calculus:</strong> Working with functions of multiple variables</li>
+            <li><strong>Optimization:</strong> Finding maxima and minima of functions</li>
+          </ul>
+
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
+            <h4 className="font-semibold mb-3">Applications in Reinforcement Learning:</h4>
+            <ul className="space-y-2">
+              <li>• Policy gradient methods use calculus to optimize policy parameters</li>
+              <li>• Value function approximation relies on gradient-based optimization</li>
+              <li>• Temporal difference learning uses derivatives for error minimization</li>
+              <li>• Continuous action spaces require calculus for policy optimization</li>
+            </ul>
+          </div>
+
+          <MathEquation 
+            equation="∇θ J(θ) = E[∇θ log π(a|s;θ) Q(s,a)]" 
+            description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
+          />
+        </ContentBlock>
+
         {/* Probability Theory */}
         <SectionHeading 
           title="Probability Theory and Random Processes" 
