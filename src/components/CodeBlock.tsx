@@ -17,7 +17,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language, title }) => {
   };
 
   return (
-    <div className="rounded-lg overflow-hidden mb-6 bg-gray-800 text-gray-100">
+    <div className="rounded-lg overflow-hidden mb-6 bg-gray-800 text-gray-100 shadow-xl">
       {title && (
         <div className="flex items-center justify-between px-4 py-2 bg-gray-700">
           <span className="font-mono text-sm">{title}</span>
