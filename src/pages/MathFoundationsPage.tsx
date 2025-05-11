@@ -6,7 +6,7 @@ import CodeBlock from '../components/CodeBlock';
 
 const MathFoundationsPage: React.FC = () => {
   const handleOpenCalculusGuide = () => {
-    window.open('/Module_1_calculus', '_blank');
+    window.open('/calculus.pdf', '_blank');
   };
 
   const gradientDescentCode = `
