@@ -6,7 +6,7 @@ import CodeBlock from '../components/CodeBlock';
 
 const MathFoundationsPage: React.FC = () => {
   const handleOpenCalculusGuide = () => {
-    window.open('/calculus.pdf', '_blank');
+    window.open('/Module_1_calculus.pdf', '_blank');
   };
 
   const gradientDescentCode = `
@@ -106,7 +106,7 @@ print(f"Function value at minimum: {f_history[-1]}")
         <ContentBlock>
           <button
             onClick={handleOpenCalculusGuide}
-            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left"
+            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer"
           >
             <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
             <p className="text-gray-700">
