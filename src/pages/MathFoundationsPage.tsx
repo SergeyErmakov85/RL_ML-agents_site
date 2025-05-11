@@ -2,8 +2,66 @@ import React from 'react';
 import SectionHeading from '../components/SectionHeading';
 import ContentBlock from '../components/ContentBlock';
 import MathEquation from '../components/MathEquation';
+import CodeBlock from '../components/CodeBlock';
 
 const MathFoundationsPage: React.FC = () => {
+  const handleOpenCalculusGuide = () => {
+    window.open('/Module_1_calculus', '_blank');
+  };
+
+  const gradientDescentCode = `
+import numpy as np
+import matplotlib.pyplot as plt
+
+def gradient_descent(f, df, x0, learning_rate=0.1, num_iterations=100):
+    """
+    Simple gradient descent implementation
+    
+    Args:
+        f: Function to minimize
+        df: Gradient of f
+        x0: Initial point (numpy array)
+        learning_rate: Step size alpha
+        num_iterations: Number of iterations
+        
+    Returns:
+        x_history: History of x values during optimization
+        f_history: History of function values
+    """
+    x = x0.copy()
+    x_history = [x.copy()]
+    f_history = [f(x)]
+    
+    for i in range(num_iterations):
+        # Compute gradient
+        gradient = df(x)
+        
+        # Update x by taking a step in the negative gradient direction
+        x = x - learning_rate * gradient
+        
+        # Store x and f(x)
+        x_history.append(x.copy())
+        f_history.append(f(x))
+        
+    return np.array(x_history), np.array(f_history)
+
+# Example usage:
+# Define a simple quadratic function and its gradient
+def f(x):
+    return x[0]**2 + 2*x[1]**2
+
+def df(x):
+    return np.array([2*x[0], 4*x[1]])
+
+# Run gradient descent
+x0 = np.array([3.0, -2.0])
+x_history, f_history = gradient_descent(f, df, x0)
+
+print(f"Starting point: {x0}")
+print(f"Final point: {x_history[-1]}")
+print(f"Function value at minimum: {f_history[-1]}")
+`;
+
   return (
     <div>
       {/* Page Header */}
@@ -46,13 +104,16 @@ const MathFoundationsPage: React.FC = () => {
         />
 
         <ContentBlock>
-          <a href="/calculus.pdf" target="_blank" className="block p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8">
+          <button
+            onClick={handleOpenCalculusGuide}
+            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left"
+          >
             <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
             <p className="text-gray-700">
               Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
               This document covers derivatives, integrals, and their role in optimization algorithms.
             </p>
-          </a>
+          </button>
 
           <h3 className="text-xl font-semibold mb-4">Key Concepts in Calculus</h3>
           <ul className="list-disc pl-6 mb-6 space-y-2">
@@ -76,6 +137,12 @@ const MathFoundationsPage: React.FC = () => {
             equation="∇θ J(θ) = E[∇θ log π(a|s;θ) Q(s,a)]" 
             description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
           />
+
+          <h3 className="text-xl font-semibold mt-8 mb-4">Gradient Descent Implementation</h3>
+          <p className="mb-4">
+            Here's a practical implementation of gradient descent, a fundamental optimization algorithm used in many reinforcement learning methods:
+          </p>
+          <CodeBlock code={gradientDescentCode} language="python" />
         </ContentBlock>
 
         {/* Probability Theory */}
