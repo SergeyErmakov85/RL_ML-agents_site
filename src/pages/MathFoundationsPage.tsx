@@ -9,6 +9,10 @@ const MathFoundationsPage: React.FC = () => {
     window.open('/Module_1_calculus.pdf', '_blank');
   };
 
+  const handleOpenLinearAlgebraGuide = () => {
+    window.open('/Module_2_linear_algebra.pdf', '_blank');
+  };
+
   const gradientDescentCode = `
 import numpy as np
 import matplotlib.pyplot as plt
@@ -95,6 +99,48 @@ print(f"Function value at minimum: {f_history[-1]}")
             learning algorithms and theory. Understanding these foundations is essential for grasping how and why
             reinforcement learning algorithms work.
           </p>
+        </ContentBlock>
+
+        {/* Linear Algebra */}
+        <SectionHeading 
+          title="Linear Algebra" 
+          subtitle="The fundamental mathematical tools for handling vectors, matrices, and transformations."
+        />
+
+        <ContentBlock>
+          <button
+            onClick={handleOpenLinearAlgebraGuide}
+            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer"
+          >
+            <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Linear Algebra in Reinforcement Learning</h3>
+            <p className="text-gray-700">
+              Click to open the comprehensive guide on linear algebra fundamentals and their applications in reinforcement learning.
+              This document covers vectors, matrices, eigenvalues, and their role in RL algorithms.
+            </p>
+          </button>
+
+          <h3 className="text-xl font-semibold mb-4">Key Concepts in Linear Algebra</h3>
+          <ul className="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Vectors and Vector Spaces:</strong> Representing states, actions, and features</li>
+            <li><strong>Matrices and Linear Transformations:</strong> Encoding transitions and policies</li>
+            <li><strong>Eigenvalues and Eigenvectors:</strong> Understanding system dynamics and convergence</li>
+            <li><strong>Matrix Decompositions:</strong> Solving systems and dimensionality reduction</li>
+          </ul>
+
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
+            <h4 className="font-semibold mb-3">Applications in Reinforcement Learning:</h4>
+            <ul className="space-y-2">
+              <li>• State representation and feature extraction</li>
+              <li>• Policy matrices and transition dynamics</li>
+              <li>• Value function approximation</li>
+              <li>• Dimensionality reduction for high-dimensional states</li>
+            </ul>
+          </div>
+
+          <MathEquation 
+            equation="V = Φw" 
+            description="Linear function approximation of value function V using feature matrix Φ and weight vector w"
+          />
         </ContentBlock>
 
         {/* Calculus */}
