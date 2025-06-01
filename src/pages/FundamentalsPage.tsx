@@ -141,7 +141,7 @@ class SimpleGridWorld:
         <ContentBlock>
           <div className="mb-6">
             <img 
-              src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src="https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
               alt="Reinforcement Learning Loop Diagram"
               className="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
             />

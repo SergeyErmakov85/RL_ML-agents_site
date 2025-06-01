@@ -114,7 +114,7 @@ const HomePage: React.FC = () => {
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
               <img 
-                src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                 alt="Interactive learning visualization" 
                 className="rounded-lg shadow-sm w-full"
               />

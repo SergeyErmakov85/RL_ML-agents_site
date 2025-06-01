@@ -6,10 +6,14 @@ import CodeBlock from '../components/CodeBlock';
 
 const MathFoundationsPage: React.FC = () => {
   const handleOpenCalculusGuide = () => {
-    window.open('/calculus.pdf', '_blank');
+    window.open('/Module_1_calculus.pdf', '_blank');
   };
 
-  const gradientDescentCode = `
+  const handleOpenLinearAlgebraGuide = () => {
+    window.open('/Module_2_linear_algebra.pdf', '_blank');
+  };
+
+const gradientDescentCode = `
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -62,6 +66,10 @@ print(f"Final point: {x_history[-1]}")
 print(f"Function value at minimum: {f_history[-1]}")
 `;
 
+  // Note: The Python code snippet above demonstrates the implementation of gradient descent,
+  // a fundamental optimization algorithm used in reinforcement learning methods. It is included
+  // here to provide practical insight into the mathematical concepts discussed on this page.
+
   return (
     <div>
       {/* Page Header */}
@@ -93,8 +101,11 @@ print(f"Function value at minimum: {f_history[-1]}")
           <p className="mb-4">
             In this section, we'll explore the key mathematical concepts that form the backbone of reinforcement
             learning algorithms and theory. Understanding these foundations is essential for grasping how and why
-            reinforcement learning algorithms work.
-          </p>
+        {/* Linear Algebra */}
+        <LinearAlgebraSection onOpenGuide={handleOpenLinearAlgebraGuide} />
+            equation="V = Φw" 
+            description="Linear function approximation of value function V using feature matrix Φ and weight vector w"
+          />
         </ContentBlock>
 
         {/* Calculus */}
@@ -106,7 +117,7 @@ print(f"Function value at minimum: {f_history[-1]}")
         <ContentBlock>
           <button
             onClick={handleOpenCalculusGuide}
-            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left"
+            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer"
           >
             <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
             <p className="text-gray-700">
