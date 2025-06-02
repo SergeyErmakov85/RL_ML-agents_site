@@ -3,6 +3,7 @@ import SectionHeading from '../components/SectionHeading';
 import ContentBlock from '../components/ContentBlock';
 import MathEquation from '../components/MathEquation';
 import CodeBlock from '../components/CodeBlock';
+import LinearAlgebraSection from '../components/LinearAlgebraSection';
 
 const MathFoundationsPage: React.FC = () => {
   const handleOpenCalculusGuide = () => {
@@ -88,8 +89,7 @@ print(f"Function value at minimum: {f_history[-1]}")
         {/* Introduction */}
         <SectionHeading 
           title="Mathematical Foundations of Reinforcement Learning" 
-          subtitle="Understanding the theoretical framework that makes reinforcement learning possible."
-        />
+          subtitle="Understanding the theoretical framework that makes reinforcement learning possible." />
 
         <ContentBlock>
           <p className="text-lg leading-relaxed mb-4">
@@ -98,23 +98,31 @@ print(f"Function value at minimum: {f_history[-1]}")
             the theoretical framework for understanding how agents can learn optimal behavior through interaction
             with an environment.
           </p>
+        </ContentBlock>
+
+        {/* Linear algebra */}
+        <SectionHeading 
+          title="Linear Algebra" 
+          subtitle="The mathematical language of high-dimensional spaces."
+        />
+
+        <ContentBlock className="font-sans text-base leading-7 text-green-700">
           <p className="mb-4">
             In this section, we'll explore the key mathematical concepts that form the backbone of reinforcement
-            learning algorithms and theory. Understanding these foundations is essential for grasping how and why
-        {/* Linear Algebra */}
-        <LinearAlgebraSection onOpenGuide={handleOpenLinearAlgebraGuide} />
+            learning algorithms and theory. Understanding these foundations is essential for grasping how and why.
+          </p>
+          <LinearAlgebraSection 
+            onOpenGuide={handleOpenLinearAlgebraGuide}
             equation="V = Φw" 
-            description="Linear function approximation of value function V using feature matrix Φ and weight vector w"
-          />
+            description="Linear function approximation of value function V using feature matrix Φ and weight vector w" />
         </ContentBlock>
 
         {/* Calculus */}
         <SectionHeading 
           title="Calculus" 
-          subtitle="The fundamental mathematical framework for understanding change and optimization."
-        />
+          subtitle="The fundamental mathematical framework for understanding change and optimization." />
 
-        <ContentBlock>
+        <ContentBlock className="bg-sky-700 text-current">
           <button
             onClick={handleOpenCalculusGuide}
             className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer"
@@ -126,8 +134,8 @@ print(f"Function value at minimum: {f_history[-1]}")
             </p>
           </button>
 
-          <h3 className="text-xl font-semibold mb-4">Key Concepts in Calculus</h3>
-          <ul className="list-disc pl-6 mb-6 space-y-2">
+          <h3 className="text-xl font-semibold mb-4 text-slate-50">Key Concepts in Calculus</h3>
+          <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-100">
             <li><strong>Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
             <li><strong>Integrals:</strong> Accumulating continuous quantities over time or space</li>
             <li><strong>Multivariate Calculus:</strong> Working with functions of multiple variables</li>
@@ -149,11 +157,11 @@ print(f"Function value at minimum: {f_history[-1]}")
             description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
           />
 
-          <h3 className="text-xl font-semibold mt-8 mb-4">Gradient Descent Implementation</h3>
+          <h3 className="text-lg font-semibold mt-8 mb-4">Gradient Descent Implementation</h3>
           <p className="mb-4">
             Here's a practical implementation of gradient descent, a fundamental optimization algorithm used in many reinforcement learning methods:
           </p>
-          <CodeBlock code={gradientDescentCode} language="python" />
+          <CodeBlock code={gradientDescentCode} language="python" title="Python: Градиентный спуск" />
         </ContentBlock>
 
         {/* Probability Theory */}
