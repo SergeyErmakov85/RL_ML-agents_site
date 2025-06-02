@@ -149,21 +149,21 @@ print(f"Function value at minimum: {f_history[-1]}")
           subtitle="The fundamental mathematical framework for understanding change and optimization."
         />
 
-        <ContentBlock>
+        <ContentBlock className="text-black bg-sky-700">
           <button
             onClick={handleOpenCalculusGuide}
-            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer"
+            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer shadow-inner"
           >
             <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
-            <p className="text-gray-700">
+            <p className="text-gray-700 bg-sky-200">
               Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
               This document covers derivatives, integrals, and their role in optimization algorithms.
             </p>
           </button>
 
-          <h3 className="text-xl font-semibold mb-4">Key Concepts in Calculus</h3>
-          <ul className="list-disc pl-6 mb-6 space-y-2">
-            <li><strong>Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
+          <h3 className="text-xl font-semibold mb-4 text-green-50">Key Concepts in Calculus</h3>
+          <ul className="list-disc pl-6 mb-6 space-y-2 text-lime-50">
+            <li><strong className="text-current">Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
             <li><strong>Integrals:</strong> Accumulating continuous quantities over time or space</li>
             <li><strong>Multivariate Calculus:</strong> Working with functions of multiple variables</li>
             <li><strong>Optimization:</strong> Finding maxima and minima of functions</li>
