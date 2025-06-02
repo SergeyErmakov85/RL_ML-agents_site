@@ -3,6 +3,7 @@ import SectionHeading from '../components/SectionHeading';
 import ContentBlock from '../components/ContentBlock';
 import MathEquation from '../components/MathEquation';
 import CodeBlock from '../components/CodeBlock';
+import LinearAlgebraSection from '../components/LinearAlgebraSection';
 
 const MathFoundationsPage: React.FC = () => {
   const handleOpenCalculusGuide = () => {
@@ -102,46 +103,11 @@ print(f"Function value at minimum: {f_history[-1]}")
         </ContentBlock>
 
         {/* Linear Algebra */}
-        <SectionHeading 
-          title="Linear Algebra" 
-          subtitle="The fundamental mathematical tools for handling vectors, matrices, and transformations."
+        <LinearAlgebraSection 
+          onOpenGuide={handleOpenLinearAlgebraGuide}
+          equation="V = Φw"
+          description="Linear function approximation of value function V using feature matrix Φ and weight vector w"
         />
-
-        <ContentBlock>
-          <button
-            onClick={handleOpenLinearAlgebraGuide}
-            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Linear Algebra in Reinforcement Learning</h3>
-            <p className="text-gray-700">
-              Click to open the comprehensive guide on linear algebra fundamentals and their applications in reinforcement learning.
-              This document covers vectors, matrices, eigenvalues, and their role in RL algorithms.
-            </p>
-          </button>
-
-          <h3 className="text-xl font-semibold mb-4">Key Concepts in Linear Algebra</h3>
-          <ul className="list-disc pl-6 mb-6 space-y-2">
-            <li><strong>Vectors and Vector Spaces:</strong> Representing states, actions, and features</li>
-            <li><strong>Matrices and Linear Transformations:</strong> Encoding transitions and policies</li>
-            <li><strong>Eigenvalues and Eigenvectors:</strong> Understanding system dynamics and convergence</li>
-            <li><strong>Matrix Decompositions:</strong> Solving systems and dimensionality reduction</li>
-          </ul>
-
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
-            <h4 className="font-semibold mb-3">Applications in Reinforcement Learning:</h4>
-            <ul className="space-y-2">
-              <li>• State representation and feature extraction</li>
-              <li>• Policy matrices and transition dynamics</li>
-              <li>• Value function approximation</li>
-              <li>• Dimensionality reduction for high-dimensional states</li>
-            </ul>
-          </div>
-
-          <MathEquation 
-            equation="V = Φw" 
-            description="Linear function approximation of value function V using feature matrix Φ and weight vector w"
-          />
-        </ContentBlock>
 
         {/* Calculus */}
         <SectionHeading 
@@ -149,47 +115,58 @@ print(f"Function value at minimum: {f_history[-1]}")
           subtitle="The fundamental mathematical framework for understanding change and optimization."
         />
 
-        <ContentBlock className="text-black bg-sky-700">
-          <button
-            onClick={handleOpenCalculusGuide}
-            className="block w-full p-6 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-300 mb-8 text-left cursor-pointer shadow-inner"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
-            <p className="text-gray-700 bg-sky-200">
-              Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
-              This document covers derivatives, integrals, and their role in optimization algorithms.
+        <div className="bg-blue-700 rounded-lg overflow-hidden shadow-xl mb-8">
+          <div className="p-6">
+            <h2 className="text-2xl font-bold text-white mb-2">Calculus</h2>
+            <p className="text-blue-100 mb-6">
+              The fundamental mathematical framework for understanding change and optimization.
             </p>
-          </button>
 
-          <h3 className="text-xl font-semibold mb-4 text-green-50">Key Concepts in Calculus</h3>
-          <ul className="list-disc pl-6 mb-6 space-y-2 text-lime-50">
-            <li><strong className="text-current">Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
-            <li><strong>Integrals:</strong> Accumulating continuous quantities over time or space</li>
-            <li><strong>Multivariate Calculus:</strong> Working with functions of multiple variables</li>
-            <li><strong>Optimization:</strong> Finding maxima and minima of functions</li>
-          </ul>
+            <button
+              onClick={handleOpenCalculusGuide}
+              className="block w-full p-6 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors duration-300 mb-8 text-left cursor-pointer"
+            >
+              <h3 className="text-xl font-semibold mb-2 text-white">📚 Calculus in Reinforcement Learning</h3>
+              <p className="text-blue-100">
+                Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
+                This document covers derivatives, integrals, and their role in optimization algorithms.
+              </p>
+            </button>
 
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
-            <h4 className="font-semibold mb-3">Applications in Reinforcement Learning:</h4>
-            <ul className="space-y-2">
-              <li>• Policy gradient methods use calculus to optimize policy parameters</li>
-              <li>• Value function approximation relies on gradient-based optimization</li>
-              <li>• Temporal difference learning uses derivatives for error minimization</li>
-              <li>• Continuous action spaces require calculus for policy optimization</li>
-            </ul>
+            <div className="space-y-6 text-white">
+              <h3 className="text-xl font-semibold mb-4">Key Concepts in Calculus</h3>
+              <ul className="list-disc pl-6 space-y-2 text-blue-100">
+                <li><strong className="text-white">Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
+                <li><strong className="text-white">Integrals:</strong> Accumulating continuous quantities over time or space</li>
+                <li><strong className="text-white">Multivariate Calculus:</strong> Working with functions of multiple variables</li>
+                <li><strong className="text-white">Optimization:</strong> Finding maxima and minima of functions</li>
+              </ul>
+
+              <div className="bg-blue-600 p-6 rounded-lg mt-8">
+                <h4 className="font-semibold mb-3 text-white">Applications in Reinforcement Learning:</h4>
+                <ul className="space-y-2 text-blue-100">
+                  <li>• Policy gradient methods use calculus to optimize policy parameters</li>
+                  <li>• Value function approximation relies on gradient-based optimization</li>
+                  <li>• Temporal difference learning uses derivatives for error minimization</li>
+                  <li>• Continuous action spaces require calculus for policy optimization</li>
+                </ul>
+              </div>
+
+              <div className="mt-8">
+                <MathEquation 
+                  equation="∇θ J(θ) = E[∇θ log π(a|s;θ) Q(s,a)]" 
+                  description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
+                />
+              </div>
+
+              <h3 className="text-xl font-semibold mt-8 mb-4">Gradient Descent Implementation</h3>
+              <p className="mb-4 text-blue-100">
+                Here's a practical implementation of gradient descent, a fundamental optimization algorithm used in many reinforcement learning methods:
+              </p>
+              <CodeBlock code={gradientDescentCode} language="python" />
+            </div>
           </div>
-
-          <MathEquation 
-            equation="∇θ J(θ) = E[∇θ log π(a|s;θ) Q(s,a)]" 
-            description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
-          />
-
-          <h3 className="text-xl font-semibold mt-8 mb-4">Gradient Descent Implementation</h3>
-          <p className="mb-4">
-            Here's a practical implementation of gradient descent, a fundamental optimization algorithm used in many reinforcement learning methods:
-          </p>
-          <CodeBlock code={gradientDescentCode} language="python" />
-        </ContentBlock>
+        </div>
 
         {/* Probability Theory */}
         <SectionHeading 
