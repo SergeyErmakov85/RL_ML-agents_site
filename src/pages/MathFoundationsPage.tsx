@@ -115,58 +115,50 @@ print(f"Function value at minimum: {f_history[-1]}")
           subtitle="The fundamental mathematical framework for understanding change and optimization."
         />
 
-        <div className="bg-blue-700 rounded-lg overflow-hidden shadow-xl mb-8">
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-white mb-2">Calculus</h2>
-            <p className="text-blue-100 mb-6">
-              The fundamental mathematical framework for understanding change and optimization.
+        <ContentBlock>
+          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-8">
+            <h3 className="text-xl font-semibold mb-2 text-blue-800">📚 Calculus in Reinforcement Learning</h3>
+            <p className="text-gray-700 mb-4">
+              Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
+              This document covers derivatives, integrals, and their role in optimization algorithms.
             </p>
-
             <button
               onClick={handleOpenCalculusGuide}
-              className="block w-full p-6 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors duration-300 mb-8 text-left cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-300"
             >
-              <h3 className="text-xl font-semibold mb-2 text-white">📚 Calculus in Reinforcement Learning</h3>
-              <p className="text-blue-100">
-                Click to open the comprehensive guide on calculus fundamentals and their applications in reinforcement learning.
-                This document covers derivatives, integrals, and their role in optimization algorithms.
-              </p>
+              Open Calculus Guide
             </button>
-
-            <div className="space-y-6 text-white">
-              <h3 className="text-xl font-semibold mb-4">Key Concepts in Calculus</h3>
-              <ul className="list-disc pl-6 space-y-2 text-blue-100">
-                <li><strong className="text-white">Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
-                <li><strong className="text-white">Integrals:</strong> Accumulating continuous quantities over time or space</li>
-                <li><strong className="text-white">Multivariate Calculus:</strong> Working with functions of multiple variables</li>
-                <li><strong className="text-white">Optimization:</strong> Finding maxima and minima of functions</li>
-              </ul>
-
-              <div className="bg-blue-600 p-6 rounded-lg mt-8">
-                <h4 className="font-semibold mb-3 text-white">Applications in Reinforcement Learning:</h4>
-                <ul className="space-y-2 text-blue-100">
-                  <li>• Policy gradient methods use calculus to optimize policy parameters</li>
-                  <li>• Value function approximation relies on gradient-based optimization</li>
-                  <li>• Temporal difference learning uses derivatives for error minimization</li>
-                  <li>• Continuous action spaces require calculus for policy optimization</li>
-                </ul>
-              </div>
-
-              <div className="mt-8">
-                <MathEquation 
-                  equation="∇θ J(θ) = E[∇θ log π(a|s;θ) Q(s,a)]" 
-                  description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
-                />
-              </div>
-
-              <h3 className="text-xl font-semibold mt-8 mb-4">Gradient Descent Implementation</h3>
-              <p className="mb-4 text-blue-100">
-                Here's a practical implementation of gradient descent, a fundamental optimization algorithm used in many reinforcement learning methods:
-              </p>
-              <CodeBlock code={gradientDescentCode} language="python" />
-            </div>
           </div>
-        </div>
+
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">Key Concepts in Calculus</h3>
+          <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+            <li><strong className="text-gray-800">Derivatives:</strong> Measuring rates of change and finding optimal solutions</li>
+            <li><strong className="text-gray-800">Integrals:</strong> Accumulating continuous quantities over time or space</li>
+            <li><strong className="text-gray-800">Multivariate Calculus:</strong> Working with functions of multiple variables</li>
+            <li><strong className="text-gray-800">Optimization:</strong> Finding maxima and minima of functions</li>
+          </ul>
+
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8">
+            <h4 className="font-semibold mb-3 text-gray-800">Applications in Reinforcement Learning:</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li>• Policy gradient methods use calculus to optimize policy parameters</li>
+              <li>• Value function approximation relies on gradient-based optimization</li>
+              <li>• Temporal difference learning uses derivatives for error minimization</li>
+              <li>• Continuous action spaces require calculus for policy optimization</li>
+            </ul>
+          </div>
+
+          <MathEquation 
+            equation="∇θ J(θ) = E[∇θ log π(a|s;θ) Q(s,a)]" 
+            description="The policy gradient theorem, a fundamental result using calculus for policy optimization"
+          />
+
+          <h3 className="text-xl font-semibold mt-8 mb-4 text-gray-800">Gradient Descent Implementation</h3>
+          <p className="mb-4 text-gray-700">
+            Here's a practical implementation of gradient descent, a fundamental optimization algorithm used in many reinforcement learning methods:
+          </p>
+          <CodeBlock code={gradientDescentCode} language="python" title="Gradient Descent Algorithm" />
+        </ContentBlock>
 
         {/* Probability Theory */}
         <SectionHeading 
@@ -356,37 +348,37 @@ print(f"Function value at minimum: {f_history[-1]}")
         <ContentBlock>
           <div className="space-y-6">
             <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <h4 className="font-semibold mb-2">Problem 1: Expected Value Calculation</h4>
-              <p className="mb-2">
+              <h4 className="font-semibold mb-2 text-gray-800">Problem 1: Expected Value Calculation</h4>
+              <p className="mb-2 text-gray-700">
                 A reinforcement learning agent is in a simple environment with three possible rewards: +10 with
                 probability 0.2, +5 with probability 0.5, and -3 with probability 0.3. Calculate the expected reward.
               </p>
               <details className="mt-2">
                 <summary className="cursor-pointer text-blue-600 hover:text-blue-700">Show Solution</summary>
                 <div className="mt-2 p-3 bg-white rounded">
-                  <p>E[R] = (10 × 0.2) + (5 × 0.5) + (-3 × 0.3) = 2 + 2.5 - 0.9 = 3.6</p>
+                  <p className="text-gray-800">E[R] = (10 × 0.2) + (5 × 0.5) + (-3 × 0.3) = 2 + 2.5 - 0.9 = 3.6</p>
                 </div>
               </details>
             </div>
             
             <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <h4 className="font-semibold mb-2">Problem 2: Bellman Equation Application</h4>
-              <p className="mb-2">
+              <h4 className="font-semibold mb-2 text-gray-800">Problem 2: Bellman Equation Application</h4>
+              <p className="mb-2 text-gray-700">
                 Consider a simple MDP with two states (s₁ and s₂) and two actions (a₁ and a₂). The transition
                 probabilities and rewards are as follows:
               </p>
-              <ul className="list-disc pl-6 mb-2 space-y-1">
+              <ul className="list-disc pl-6 mb-2 space-y-1 text-gray-700">
                 <li>P(s₁|s₁,a₁) = 0.7, R(s₁,a₁,s₁) = 5</li>
                 <li>P(s₂|s₁,a₁) = 0.3, R(s₁,a₁,s₂) = 10</li>
                 <li>P(s₁|s₁,a₂) = 0.4, R(s₁,a₂,s₁) = 0</li>
                 <li>P(s₂|s₁,a₂) = 0.6, R(s₁,a₂,s₂) = 15</li>
               </ul>
-              <p className="mb-2">
+              <p className="mb-2 text-gray-700">
                 Given V(s₂) = 20 and a discount factor γ = 0.9, calculate Q(s₁,a₁) and Q(s₁,a₂).
               </p>
               <details className="mt-2">
                 <summary className="cursor-pointer text-blue-600 hover:text-blue-700">Show Solution</summary>
-                <div className="mt-2 p-3 bg-white rounded">
+                <div className="mt-2 p-3 bg-white rounded text-gray-800">
                   <p>Q(s₁,a₁) = P(s₁|s₁,a₁)[R(s₁,a₁,s₁) + γV(s₁)] + P(s₂|s₁,a₁)[R(s₁,a₁,s₂) + γV(s₂)]</p>
                   <p>Since V(s₁) isn't given, we can only compute the part involving s₂:</p>
                   <p>Q(s₁,a₁) = 0.7[5 + 0.9V(s₁)] + 0.3[10 + 0.9 × 20]</p>
