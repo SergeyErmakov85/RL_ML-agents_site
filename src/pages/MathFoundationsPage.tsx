@@ -68,7 +68,7 @@ print(f"Function value at minimum: {f_history[-1]}")
 `;
 
   return (
-    <div>
+    <div className="font-serif text-blue-900 from-blue-700 via-purple-400 to-indigo-400 bg-emerald-300 text-3xl">
       {/* Page Header */}
       <section className="bg-gradient-to-r from-blue-800 to-indigo-700 py-16 px-4">
         <div className="container mx-auto">
@@ -81,7 +81,7 @@ print(f"Function value at minimum: {f_history[-1]}")
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 focus:text-6xl focus:text-green-600 focus:not-italic focus:uppercase focus:text-justify focus:bg-sky-500">
         {/* Introduction */}
         <SectionHeading 
           title="Mathematical Foundations of Reinforcement Learning" 
@@ -89,7 +89,7 @@ print(f"Function value at minimum: {f_history[-1]}")
         />
 
         <ContentBlock>
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="leading-relaxed mb-4" style={{ fontFamily: "Times New Roman", fontSize: "27px" }}>
             Reinforcement learning is built upon a rich mathematical foundation that includes probability theory,
             Markov decision processes, dynamic programming, and optimization. These mathematical tools provide
             the theoretical framework for understanding how agents can learn optimal behavior through interaction
@@ -124,7 +124,7 @@ print(f"Function value at minimum: {f_history[-1]}")
             </p>
             <button
               onClick={handleOpenCalculusGuide}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-300 focus:bg-sky-600 focus:from-emerald-400"
             >
               Open Calculus Guide
             </button>
